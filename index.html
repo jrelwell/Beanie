@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Beanie Baby Inventory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Libraries -->
+    <script src="node_modules/es6-shim/es6-shim.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+
+    <!-- Configure System.js, our module loader -->
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app.js')
+            .then(null, console.error.bind(console));
+    </script>
+     <div class="fluid-container">
+        <beanie-form></beanie-form>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Remember to save the local storage before exiting</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-push-3 col-md-6">
+                <table-data></table-data>
+            </div>
+        </div>
+     </div>
+  </body>
+</html>
